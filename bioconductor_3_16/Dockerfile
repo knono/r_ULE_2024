@@ -53,8 +53,3 @@ RUN pip3 install --upgrade pip && \
 
 ENV PYTHONUNBUFFERED=1
 
-# temas de permisos necesarios en gitpod
-
-RUN useradd -m -u 33333 gitpod
-RUN usermod -a -G staff gitpod
-RUN chown -R rstudio:rstudio /home/rstudio
