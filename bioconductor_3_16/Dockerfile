@@ -54,9 +54,7 @@ RUN pip3 install --upgrade pip && \
 ENV PYTHONUNBUFFERED=1
 
 # temas de permisos necesarios en gitpod
-# El usuario rstudio debe estar en el grupo rstudio-server
 
 RUN useradd -m -u 33333 gitpod
-RUN usermod -a -G rstudio-server gitpod
 RUN usermod -a -G staff gitpod
-
+RUN chown -R rstudio:rstudio /home/rstudio
