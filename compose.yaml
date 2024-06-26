@@ -1,0 +1,16 @@
+
+services:
+
+  bioconductor:
+    build:
+      context: .
+      dockerfile: bioconductor_3_16/Dockerfile
+    ports:
+      - "8787:8787"
+    volumes:
+      - type: bind
+        source: ./project
+        target: /home/rstudio
+    environment:
+      - PASSWORD=bioc
+
