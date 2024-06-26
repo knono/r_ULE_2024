@@ -1,0 +1,3 @@
+tasks:
+    - name: Open micro4all website on github
+      command: gp open https://nuriamw.github.io/micro4all/tutorial/package_workflow.html
