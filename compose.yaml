@@ -8,9 +8,7 @@ services:
     ports:
       - "8787:8787"
     volumes:
-      - type: bind
-        source: ./project
-        target: /home/rstudio
+      - ./project:/home/gitpod
     environment:
+      - USER=gitpod
       - PASSWORD=bioc
-

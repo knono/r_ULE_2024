@@ -38,9 +38,29 @@ RUN R -e 'install.packages("agricolae", update=TRUE, ask=FALSE)'
 
 RUN R -e 'install.packages("svglite", update=TRUE, ask=FALSE)'
 
-RUN apt-get update && \
-    apt-get -y install cutadapt ncbi-blast+ mafft fasttree
+# Install compatibility system dependencies/packages
+RUN apt-get update && apt-get install -yq --no-install-recommends \
+    git \
+    git-lfs \
+    sudo \
+    curl \
+    build-essential \
+    pkg-config \
+    ca-certificates \
+    libssl-dev
 
+# Create the gitpod user
+ENV USER=gitpod
+ENV USERID=33333
+ENV HOME=/home/${USER}
+RUN useradd -l -u ${USERID} -G sudo -md ${HOME} -s /bin/bash -p ${USER} ${USER} \
+    && mkdir -p /etc/sudoers.d && echo "%${USER} ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/${USER}
+
+# Select the gitpod user and use a login shell during docker build
+#USER ${USER}
+#SHELL [ "bash", "-lic" ]
+
+RUN apt-get -y install cutadapt ncbi-blast+ mafft fasttree
 # Exponer el puerto 8787
 EXPOSE 8787
 
