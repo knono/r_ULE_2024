@@ -56,5 +56,7 @@ ENV PYTHONUNBUFFERED=1
 # temas de permisos necesarios en gitpod
 # El usuario rstudio debe estar en el grupo rstudio-server
 
-RUN usermod -a -G rstudio-server rstudio
-RUN chown -R rstudio:rstudio /home/rstudio
+RUN useradd -m -u 33333 gitpod
+RUN usermod -a -G rstudio-server gitpod
+RUN usermod -a -G staff gitpod
+
