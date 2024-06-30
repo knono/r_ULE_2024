@@ -1,3 +1,4 @@
+image: nono/r_ule_2024:latest
 
 tasks:
     - name: Open micro4all website on github
