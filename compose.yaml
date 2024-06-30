@@ -11,6 +11,6 @@ services:
     volumes:
       - ./project:/home/gitpod
     environment:
-      - DISABLE_AUTH=true
-#      - USER=gitpod
-#      - PASSWORD=bioc
+#      - DISABLE_AUTH=true
+      - USER=gitpod
+      - PASSWORD=bioc
