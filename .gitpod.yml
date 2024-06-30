@@ -1,13 +1,5 @@
-image: nono/r_ule_2024:latest
 
 tasks:
-    - name: Terminal 1
-      before: echo "docker run"
-      command: docker run --rm -p 8787:8787 -e DISABLE_AUTH=true -v "$(pwd)/project":/home/gitpod nono/r_ule_2024
-
-    - name: Terminal 2
-      command: gp top
-
     - name: Open micro4all website on github
       command: gp preview https://nuriamw.github.io/micro4all/tutorial/package_workflow.html
 
