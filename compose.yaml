@@ -4,11 +4,13 @@ services:
   bioconductor:
     build:
       context: .
-      dockerfile: bioconductor_3_16/Dockerfile
+#      dockerfile: bioconductor_3_16/Dockerfile
+    image: nono/r_ule_2024
     ports:
       - "8787:8787"
     volumes:
       - ./project:/home/gitpod
     environment:
-      - USER=gitpod
-      - PASSWORD=bioc
+      - DISABLE_AUTH=true
+#      - USER=gitpod
+#      - PASSWORD=bioc
