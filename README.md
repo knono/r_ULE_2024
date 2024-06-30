@@ -3,7 +3,7 @@
 Para comenzar a usar Rstudio
 > .# docker compose up -d
 
-Para pararlo dentro de la instancia de gitpo
+Para pararlo dentro de la instancia de gitpod.
 > .# docker compose down
 
 Como puede ver en el fichero compose.yaml, el usuario de Rstudio es gitpod y contraseña bioc
